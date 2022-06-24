@@ -1,0 +1,20 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<ul class="ul1">
+  <li class="li1" (click)="tabSelected = 'tab1'">Tab 1</li>
+  <li class="li1" (click)="tabSelected = 'tab2'">Tab 2</li>
+  <li class="li1" (click)="tabSelected = 'tab3'">Tab 3</li>
+</ul>
+<div [ngSwitch]="tabSelected">
+  <div *ngSwitchCase="'tab1'">
+    <ul>
+      <li *ngFor="let name of names">
+        <div [ngClass]="getNames(name)">{{ name }}</div>
+      </li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'tab2'"><p>tab 2 content is coming soon</p></div>
+  <div *ngSwitchCase="'tab3'">
+    <p>tab 3 content is coming soon</p>
+  </div>
+</div>
