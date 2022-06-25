@@ -6,7 +6,7 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'Angular ' + VERSION.major;
+  name = [];
   // myClass:string;
   tabSelected: string;
   tbbi = [];
@@ -14,7 +14,7 @@ export class AppComponent {
   names = [
     'Muneshsir','Zalak','Grishma','Vishal','Neel','Harsh','Akash','Prachi','peenal','Bhoomi','Pooja','Dipesh','Roger', 'Jatin','Peenal', 'Dhrishil',
   ];
-  getNames(name) {
+  getNames(name:any) {
     if (name == 'Bhoomi' || name == 'Muneshsir' || name == 'Zalak')
       return 'mee';
     else return 'batchmates';
@@ -23,18 +23,18 @@ export class AppComponent {
       this.names.splice(this.names.indexOf(name), 1);
   }
   addTab(name){
-    this.tbbi.push(this.name);
+    this.tbbi.push(name);
   }
   removebi(tbtwo) {
     this.tbbi.splice(this.tbbi.indexOf(tbtwo), 1);
 }
 addbiTab(name){
-  this.tbtri.push(this.name);
+  this.tbtri.push(name);
 }
 removetri(tbthree){
   this.tbtri.splice(this.tbtri.indexOf(tbthree),1)
 }
 addtriTab(name){
-  this.tbbi.push(this.name);
+  this.tbbi.push(name);
   }
 }
