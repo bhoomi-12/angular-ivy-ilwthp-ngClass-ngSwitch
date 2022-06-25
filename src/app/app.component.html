@@ -9,12 +9,22 @@
   <div *ngSwitchCase="'tab1'">
     <ul>
       <li *ngFor="let name of names">
-        <div [ngClass]="getNames(name)">{{ name }}</div>
+        <div [ngClass]="getNames(name)">
+          {{ name }}--<button (click)="remove(name)">remove</button>----
+          <button (click)="addToTab(name)">  ADD TO TAB 2 </button>
+        </div>
       </li>
     </ul>
   </div>
-  <div *ngSwitchCase="'tab2'"><p>tab 2 content is coming soon</p></div>
+  <div *ngSwitchCase="'tab2'">
+    <ul>
+      <li *ngFor="let name of tbtri">
+        <div>--<button (click)="addTriTab(name)">ADD TO TAB 2</button></div>
+      </li>
+    </ul>
+  </div>
   <div *ngSwitchCase="'tab3'">
     <p>tab 3 content is coming soon</p>
   </div>
+  <div *ngSwitchDefault>No page is selcted yet</div>
 </div>
